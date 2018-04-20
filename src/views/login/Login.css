@@ -1,0 +1,36 @@
+.LoginBox{
+    margin-left: 20%;
+    padding: 5%;
+    background-color: lightgray;
+    width: 50%;
+    height: 40%;
+    
+}
+.loginText{
+    margin-left: 20%;
+    color: rgb(37, 73, 139);
+}
+
+.emailEmp{
+    
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: cornflowerblue;
+}
+.emailInd{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 22px;
+    color:  cornflowerblue;
+}
+.senha{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    color:  cornflowerblue;
+}
+
+.button{
+    margin-left: 70%;
+    margin-top: 10%;
+    font-size: 120%;
+}
+

@@ -1,17 +1,6 @@
-.title{
-    font-size : 18px;
-
-    border: 5px solid slateblue;
-}
-
-.text{
-    font-size:12px;
-    
-    border: 5px solid slateblue;
-}
-
-.divMain{
-    width: 43%;
+.card{
+    width: 18rem;
+    margin: 2%;
     display: inline-block;
+    
 }
-
