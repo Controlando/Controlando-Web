@@ -35,7 +35,7 @@ class LandPage extends React.Component {
             <div className='content'>
                 <TitleText image = {imagem} title='O que é?' text='O controlando é uma aplicação web com o objetivo de facilitar o controle de finanças de sua empresa ou startup.' btnText='Cadastre-se já'/>
                 <TitleText image = {imagem1} title='Como funciona?' text='Após o cadastro, você poderá administrar as despesas e ganhos mensais de sua empresa.' btnText='Login'/>
-                <TitleText image = {imagem2} title='Vantagens' text='Relatórios mensais, planejamento para não entrar no vermelho, software gratuito, e feito para você usufruir de uma interface prática e eficiente.'btnText=''/>
+                <TitleText image = {imagem2} title='Vantagens' text='Relatórios mensais, planejamento para não entrar no vermelho, software gratuito, e feito para você usufruir de uma interface prática e eficiente.'btnText='Isabelle'/>
             </div>
         </div>);
     }
