@@ -6,10 +6,10 @@ import registerServiceWorker from './registerServiceWorker';
 import Login from './views/login/Login';
 import CreateAccount from './views/createAccount/CreateAccount'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-
+import NavegationBar from './components/NavegationBar/NavegationBar'
 //import Login from './views/login/Login'
 
-ReactDOM.render(
+/*ReactDOM.render(
     <BrowserRouter>  
         <Switch>
             <Route path = "/" exact={true} component= {LandPage}/>
@@ -19,7 +19,6 @@ ReactDOM.render(
     </BrowserRouter>
     , document.getElementById('root'));
 registerServiceWorker();
-
-/*ReactDOM.render(<Login/>, document.getElementById('root'));
-registerServiceWorker();
 */
+ReactDOM.render(<NavegationBar/>, document.getElementById('root'));
+registerServiceWorker();
