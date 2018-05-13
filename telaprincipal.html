@@ -21,124 +21,171 @@
 <!--Main Navigation-->
         <header id=cabecalho>
 
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary scrolling-navbar">
-                <a class="navbar-brand" href="#"><h1>Controlando</h1></a>
+            <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #8A2BE2">
+                <a class="navbar-brand" href="telaInicial.html"><h3>Controlando</h3></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="telaprincipal.html">Início <span class="sr-only">(current)</span></a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="telaprincipal.html" style="color: white;">Visão Geral <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre</a>
+                            <a class="nav-link" href="#" style="color: white;">Lançamentos</a>
                         </li>
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Produtos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contato</a>
+                            <a class="nav-link" href="#" style="color: white;">Relatórios</a>
                         </li>
                     </ul>
                     
                 <ul class="navbar-nav mr-right mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="telalogin.html"> Entrar <img src="login-icon.png"></a>
+                        <a class="nav-link" href=""><img src="settings.png"></a>
                     </li>
+                    
                     <li class="nav-item">
-                        <a class="nav-link" href="telacadastro.html"> Cadastro <img src="cadastro-icon.png"></a>
-                       
+                        <div class="dropdown">
+                            <span><a class="nav-link" href=""><img src="user.png"></a></span>
+                            <div class="dropdown-content"> hello world </div>
+
+                        </div>
                     </li>
+                    
                 </ul>
+                    
                 </div>
             </nav>    
     
     </header>
     <br><br><br><br>
-    <section id = "corpoPrincipal" >
-      <!-- Card deck -->
-      <div class="card-deck">
-
-      <!-- Card1 -->
-      <div class="card mb-4">
-
-        <!--Card image-->
-        <img class="card-img-top" src="img1.png" alt="Card image cap">
-        <div class="mask rgba-white-slight"></div>
+    <article id = "corpoPrincipal" >
+        
+        <section id="coluna_esquerda"  >
+        <br><br>
+        <div class="card card-body" style="width: 100%; height: 80%; background:#4B088A;width: 120%; height: 80%;">
+            <p class="card-title" style="color:white; font-size:120%">Boa tarde, @NomeUsuário! </p>
+            <p class="card-text" style="text-align:center; color:white; font-size:200%; margin-top:10%">R$ 0,00 <br> Saldo Geral</p>
+            
+        </div>
+            
+        <br>
+            
+        <div class="card card-body" style="width: 120%; height: 80%;">
+            
+            <h4 class="card-title" style="font-size: 130%; font-family:Calibri Light;"> 
+                <b>Contas a pagar <input type="image" src="plus2.png" alt="Submit" style="margin-left:40%"> <input type="image" src="trash.png" alt="Submit"></b>
+            </h4>
+            <p class="card-text"><br>Não há despesas inseridas.</p>
+            <p class="card-text"><a href="">Adicione suas despesas aqui!</a></p>
+            
+        </div>
+            
+        <br>
+            
+        <div class="card card-body"  style="width: 120%; height: 80%;" >
+    
+            <h4 class="card-title" style="font-size: 130%; font-family:Calibri Light;"> 
+                <b>Contas a receber<input type="image" src="plus2.png" alt="Submit" style="margin-left:40%"> <input type="image" src="trash.png" alt="Submit"></b>
+            </h4>    
+            <p class="card-text"><br>Não há contas a receber.</p>
+             <p class="card-text"><a href="">Adicione suas receitas aqui!</a></p>
+            
+        </div>
+            
+        <br>    
+        <div class="card card-body" style="width: 120%; height: 65%;" >
+            <h4 class="card-title" style="font-size: 130%; font-family:Calibri Light;"><b>Dúvidas</b></h4>
+            <p class="card-text"><a href="Link Aqui">Pergunta 1</a></p>
+            <p class="card-text"><a href="Link Aqui">Pergunta 1</a></p>
+            <p class="card-text"><a href="Link Aqui">Pergunta 1</a></p>
+            
+        </div>
+        
+        </section>
+        
+        
+        
+        <section id="coluna_direita">
+        <br><br>
         
 
-        <!--Card content-->
-        <div class="card-body">
-
-          <!--Title-->
-          <h4 class="card-title">O que é?</h4>
-          <!--Text-->
-          <p class="card-text">O controlando é uma aplicação web com o objetivo de facilitar o controle de finanças de sua empresa ou startup.</p>
-         
-          <button type="button" class="btn btn-light-blue btn-md bg-primary" style="color: white;">Cadastre-se</button>
-
+        <div class="card card-body" id = "botoes" style="width: 120%; height: 60%;" >
+            <h4 class="card-title" style="font-size: 130%; font-family:Calibri Light;"><b>Acesso rápido</b></h4>
+            <br>
+          
+            <div style="display: inline;">
+                
+            <div class="botao" style="float: left; margin-right: 2%">
+                <button type="button" class="btn btn-outline-success">Despesas</button>
+            </div>
+                
+            <div class="botao" style="float: left;">
+                <button type="button" class="btn btn-outline-primary">Receitas</button>
+            </div>
+                
+            <div class="botao" style="float: left; margin-left: 2%">
+                <button type="button" class="btn btn-outline-secondary">Relatórios</button>
+            </div>
+                
+            </div>
+             
         </div>
-
-      </div>
-      <!-- Card1 -->
-
-          
-          
-      <!-- Card2 -->
-      <div class="card mb-4">
-
-        <!--Card image-->
-          <img class="card-img-top" src="img2.jpg" alt="Card image cap">
-            <div class="mask rgba-white-slight"></div>
-
-        <!--Card content-->
-        <div class="card-body">
-
-          <!--Title-->
-          <h4 class="card-title">Como funciona?</h4>
-          <!--Text-->
-          <p class="card-text">Após o cadastro, você poderá administrar as despesas e ganhos mensais de sua empresa.</p>
-
+            
+        <br>
+        <br>
+            
+        <div class="card card-body" style="width: 120%; height: 80%;" >
+            <h4 class="card-title" style="font-size: 130%; font-family:Calibri Light;"><b>Urgências</b></h4>
+            <p class="card-text">Aqui serão listadas as contas a serem pagas com um nível de urgência mais alto.</p>
+            
+            <div class="flex-row">
+                <p class="card-text"><a href="">Adicione despesas aqui!</a></p>
+            </div>
         </div>
-
-      </div>
-      <!-- Card2 -->
-
-          
-          
-          
-      <!-- Card3 -->
-      <div class="card mb-4">
-
-        <!--Card image-->
-        <img class="card-img-top" src="img3.jpg" alt="Card image cap">
-        <div class="mask rgba-white-slight"></div>
+            
+        <br>
+            
+        <div class="card card-body" style="width: 120%; height: 80%;">
+            <h4 class="card-title" style="130%; font-family:Calibri Light;"><b>Metas do mês</b></h4>
+            <p class="card-text">Nenhuma meta adicionada ainda.</p>
+            <p class="card-text"><a href="">Adicione suas metas aqui!</a></p>
+            
+            
+            
+        </div>    
+            
+        </section>
+    </article>
+    
+    <footer class="page-footer font-small blue pt-4 mt-4" style="color: white;" id="rodape">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row" style="background-color: #8A2BE2;">
+                <div class="col-md-6">
+                    <h5 class="text-uppercase">Sobre</h5>
+                    <h6>O Controlando é uma plataforma de controle de finanças para sua empresa ou startup.</h6>
+                    <h5 class="text-uppercase">Produtos</h5>
+                    <h6>Só tem um produto e ele é grátis s2 (mudar aqui)</h6>
+                </div>
+                
+                <div class="col-md-6">
+                    <h5 class="text-uppercase">Contato</h5>
+                    <h6>Confira nossas redes sociais</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#"> <b>Instagram.com/Controlando</b> </a> </li>
+                        <li><a href="#"> <b>Facebook.cm/Controlando </b> </a> </li>
+                        <li><a href="#"> <b>Twitter.com/Controlando </b> </a> </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
         
-        <!--Card content-->
-        <div class="card-body">
-
-          <!--Title-->
-          <h4 class="card-title">Vantagens</h4>
-          <ul>
-              <li> Relatórios mensais.</li>
-              <li> Planejamento para não entrar no vermelho.</li>
-              <li> Gratuito</li>
-              <li> Usufrui de uma interface prática e eficente</li>
-         </ul>
-
-        </div>
-
-      </div>
-      <!-- Card -->
-
-    </div>
-    <!-- Card deck -->
- </section>
-        
-        <footer class="footer" style="color:white;">
-            <p>© 2018 Copyright: Controlando</p>
-        </footer>
+        <div class="footer-copyright py-3 text-center" style="background-color:#4B0082 ">
+            © 2018 Copyright: Controlando
+        </div>    
+    </footer>
     
     
     
