@@ -11,7 +11,7 @@
     <!-- <link rel="style" type="text/css" href="interf.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   
-    <title>Controlando</title>
+    <title>Controlando - Bem-vindo!</title>
          
   </head>
     
@@ -22,7 +22,7 @@
         <header id=cabecalho>
 
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #8A2BE2">
-                <a class="navbar-brand" href="telaInicial.html"><h3>Controlando</h3></a>
+                <a class="navbar-brand" href=""><h3>Controlando</h3></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -32,26 +32,26 @@
                             <a class="nav-link" href="telaprincipal.html" style="color: white;">Visão Geral <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: white;">Lançamentos</a>
+                            <a class="nav-link" href="lancamentos.html" style="color: white;">Lançamentos</a>
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link" href="#" style="color: white;">Relatórios</a>
+                            <a class="nav-link" href="relatorioview.html" style="color: white;">Relatórios</a>
                         </li>
                     </ul>
                     
                 <ul class="navbar-nav mr-right mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href=""><img src="settings.png"></a>
+                        <a class="nav-link" href="telaInicial.html"><img src="exit-sign%20(2).png"></a>
                     </li>
-                    
+                    <!--
                     <li class="nav-item">
                         <div class="dropdown">
                             <span><a class="nav-link" href=""><img src="user.png"></a></span>
                             <div class="dropdown-content"> hello world </div>
 
                         </div>
-                    </li>
+                    </li>-->
                     
                 </ul>
                     
@@ -78,7 +78,7 @@
                 <b>Contas a pagar <input type="image" src="plus2.png" alt="Submit" style="margin-left:40%"> <input type="image" src="trash.png" alt="Submit"></b>
             </h4>
             <p class="card-text"><br>Não há despesas inseridas.</p>
-            <p class="card-text"><a href="">Adicione suas despesas aqui!</a></p>
+            <p class="card-text"><a href="lancamentos.html">Adicione suas despesas aqui!</a></p>
             
         </div>
             
@@ -90,7 +90,7 @@
                 <b>Contas a receber<input type="image" src="plus2.png" alt="Submit" style="margin-left:40%"> <input type="image" src="trash.png" alt="Submit"></b>
             </h4>    
             <p class="card-text"><br>Não há contas a receber.</p>
-             <p class="card-text"><a href="">Adicione suas receitas aqui!</a></p>
+             <p class="card-text"><a href="lancamentos.html">Adicione suas receitas aqui!</a></p>
             
         </div>
             
@@ -118,15 +118,17 @@
             <div style="display: inline;">
                 
             <div class="botao" style="float: left; margin-right: 2%">
-                <button type="button" class="btn btn-outline-success">Despesas</button>
+                <button type="button" class="btn btn-outline-success"><a href="lancamentos.html"> Despesas </a></button>
+                                                                       
+               
             </div>
                 
             <div class="botao" style="float: left;">
-                <button type="button" class="btn btn-outline-primary">Receitas</button>
+                <button type="button" class="btn btn-outline-primary"><a href="lancamentos.html">Receitas </a></button>
             </div>
                 
             <div class="botao" style="float: left; margin-left: 2%">
-                <button type="button" class="btn btn-outline-secondary">Relatórios</button>
+                <button type="button" class="btn btn-outline-secondary"><a href="relatorioview.html">Relatórios</a></button>
             </div>
                 
             </div>
@@ -141,7 +143,8 @@
             <p class="card-text">Aqui serão listadas as contas a serem pagas com um nível de urgência mais alto.</p>
             
             <div class="flex-row">
-                <p class="card-text"><a href="">Adicione despesas aqui!</a></p>
+                <p class="card-text"><a href="lancamentos.html">Adicione despesas aqui!</a></p>
+                
             </div>
         </div>
             
@@ -150,7 +153,7 @@
         <div class="card card-body" style="width: 120%; height: 80%;">
             <h4 class="card-title" style="130%; font-family:Calibri Light;"><b>Metas do mês</b></h4>
             <p class="card-text">Nenhuma meta adicionada ainda.</p>
-            <p class="card-text"><a href="">Adicione suas metas aqui!</a></p>
+            <p class="card-text"><a href="lancamentos.html">Adicione suas metas aqui!</a></p>
             
             
             
@@ -162,20 +165,24 @@
     <footer class="page-footer font-small blue pt-4 mt-4" style="color: white;" id="rodape">
         <div class="container-fluid text-center text-md-left">
             <div class="row" style="background-color: #8A2BE2;">
-                <div class="col-md-6">
+                <div style="margin-left: 2%">
                     <h5 class="text-uppercase">Sobre</h5>
-                    <h6>O Controlando é uma plataforma de controle de finanças para sua empresa ou startup.</h6>
-                    <h5 class="text-uppercase">Produtos</h5>
-                    <h6>Só tem um produto e ele é grátis s2 (mudar aqui)</h6>
+                    <h6>O Controlando é uma plataforma de controle de</h6>
+                    <h6>finanças para sua empresa ou startup.</h6>
+                    
                 </div>
                 
-                <div class="col-md-6">
-                    <h5 class="text-uppercase">Contato</h5>
-                    <h6>Confira nossas redes sociais</h6>
+                <div style="margin-left:20%; margin-top: 1% ">
+                    <img src="bank%20(1).png">
+                </div>
+                
+                <div style="margin-left: 25%">
+                   
+                    <h6 class="text-uppercase" >Confira nossas redes sociais</h6>
                     <ul class="list-unstyled">
-                        <li><a href="#"> <b>Instagram.com/Controlando</b> </a> </li>
-                        <li><a href="#"> <b>Facebook.cm/Controlando </b> </a> </li>
-                        <li><a href="#"> <b>Twitter.com/Controlando </b> </a> </li>
+                        <li ><a href="https://www.instagram.com/?hl=pt-br"><img src="instagram.png"> <b>Instagram.com/Controlando</b> </a> </li>
+                        <li><a href="https://pt-br.facebook.com/"><img src="facebook.png"><b> Facebook.cm/Controlando </b> </a> </li>
+                        <li><a href="https://twitter.com/?lang=pt-br"><img src="twitter.png"> <b> Twitter.com/Controlando </b> </a> </li>
                     </ul>
                 </div>
                 

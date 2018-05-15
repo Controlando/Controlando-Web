@@ -1,0 +1,23 @@
+[0421/190600.162:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/191720.279:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/192510.549:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/192533.131:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/192615.716:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/193206.216:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/193806.777:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/211753.067:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/212617.628:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/212645.820:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/220624.829:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/221020.058:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: O pipe foi finalizado. (0x6D)
+[0421/223657.421:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/224311.642:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/224350.759:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/224516.046:ERROR:process_info.cc(359)] UncheckedAllocate
+[0421/224534.316:ERROR:process_info.cc(359)] UncheckedAllocate
+[0422/000644.409:ERROR:process_info.cc(359)] UncheckedAllocate
+[0422/000644.901:ERROR:process_info.cc(359)] UncheckedAllocate
+[0422/000645.325:ERROR:process_info.cc(359)] UncheckedAllocate
+[0422/000818.499:ERROR:file_io.cc(36)] ReadFile: Não existem recursos de sistema suficientes para concluir o serviço solicitado. (0x5AA)
+[0422/000818.499:ERROR:file_io.cc(134)] WriteFile: Não existem recursos de sistema suficientes para concluir o serviço solicitado. (0x5AA)
+[0422/155937.327:ERROR:file_io.cc(89)] ReadExactly: expected 40, observed 0

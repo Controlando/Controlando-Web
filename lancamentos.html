@@ -1,0 +1,275 @@
+<!doctype html>
+
+<html lang="pt-br">
+      <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel = "stylesheet" type = "text/css" href = "interflanca.css"/>    
+
+
+        <!-- Bootstrap CSS -->
+        <link rel="style" type="text/css" href="interflanca.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+
+        <title>Controlando</title>
+
+        <style>
+
+            div#cartao a{
+                text-decoration: none;
+                color: white;
+            }
+
+        </style>  
+         
+        </head>
+    
+        <body>
+    
+        
+<!--Main Navigation-->
+        <header id="cabecalho">
+                <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #8A2BE2">
+                <a class="navbar-brand" href=""><h3>Controlando</h3></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="telaprincipal.html" style="color: white;">Visão Geral <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" style="color: white;">Lançamentos</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link" href="relatorioview.html" style="color: white;">Relatórios</a>
+                        </li>
+                    </ul>
+                    
+                <ul class="navbar-nav mr-right mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="telaInicial.html"><img src="exit-sign%20(2).png"></a>
+                    </li>
+                    <!--
+                    <li class="nav-item">
+                        <div class="dropdown">
+                            <span><a class="nav-link" href=""><img src="user.png"></a></span>
+                            <div class="dropdown-content"> hello world </div>
+
+                        </div>
+                    </li>-->
+                    
+                </ul>
+                    
+                </div>
+            </nav>    
+        </header>
+        <br><br><br><br>
+    
+            
+            
+    <div class="modal fade" id="myModal1" role="dialog">
+                <div class="modal-dialog">
+                    
+                    <!-- Card content -->
+                    <div class="card-body">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="modalLongTitle">Adicionar receita</h3>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <div class="modal-body" style="width:300px;">
+                                <label for="defaultForm" class="grey-text" id="labelNome">Nome:</label>
+                                <input type="name" id="inputNome" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelValor">Valor:</label>
+                                <input type="value" id="inputValor" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelNivel">Nível:</label>
+                                <input type="name" id="inputNivel" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelPeriodo">Período:</label>
+                                <input type="name" id="inputPeriodo" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelCor">Cor:</label>
+                                <input type="color" id="inputCor" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelData">Data limite:</label>
+                                <input type="date" id="inputData" class="form-control">
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;">Salvar</button>
+                                <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>        
+            
+      
+    <div class="modal fade" id="myModal2" role="dialog">
+                <div class="modal-dialog">
+                    
+                    <!-- Card content -->
+                    <div class="card-body">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="modalLongTitle">Adicionar Despesa</h3>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <div class="modal-body" style="width:300px;">
+                                <label for="defaultForm" class="grey-text" id="labelNome">Nome:</label>
+                                <input type="name" id="inputNome" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelValor">Valor:</label>
+                                <input type="value" id="inputValor" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelNivel">Nível:</label>
+                                <input type="name" id="inputNivel" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelPeriodo">Período:</label>
+                                <input type="name" id="inputPeriodo" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelCor">Cor:</label>
+                                <input type="color" id="inputCor" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelData">Data limite:</label>
+                                <input type="date" id="inputData" class="form-control">
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;">Salvar</button>
+                                <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>                
+            
+    
+    <div class="modal fade" id="myModal3" role="dialog">
+                <div class="modal-dialog">
+                    
+                    <!-- Card content -->
+                    <div class="card-body">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="modalLongTitle">Adicionar Meta</h3>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <div class="modal-body" style="width:300px;">
+                                <label for="defaultForm" class="grey-text" id="labelNome">Nome:</label>
+                                <input type="name" id="inputNome" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelValor">Valor:</label>
+                                <input type="value" id="inputValor" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelCor">Cor:</label>
+                                <input type="color" id="inputCor" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelData">Data limite:</label>
+                                <input type="date" id="inputData" class="form-control">
+                                <label for="defaultForm" class="grey-text" id="labelDescricao">Descrição:</label>
+                                <input type="name" id="inputDescricao" class="form-control">
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;">Salvar</button>
+                                <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>             
+            
+            
+    <section id="corpoPrincipal">
+        
+        <div class="card-deck">
+            
+            <!-- Card 1 -->
+            
+            <div class="card mb-4" id="cartao1">
+                
+                <!-- Card image -->
+                
+                <img class="card-img-top" id="cardRec" src="receita.png" alt="Card image cap">
+                <div class="mask rgba-white-slight"></div>
+                
+                
+                
+                <button class = "btn" type="button" id="botao1" data-toggle="modal" data-target="#myModal1">Adicionar receita</button>   
+            </div>
+            
+            
+            
+            <div class="card mb-4" id = "cartao2">
+                
+                <!-- Card image -->
+                <img class="card-img-top" id="cardDesp" src="despesa.png" alt="Card image cap">
+                <div class="mask rgba-white-slight"></div>
+            
+            
+             <button type="button" class="btn" id="botao2" data-toggle="modal" data-target="#myModal2">Adicionar despesa</button>
+                
+            </div>
+            
+            
+            
+            <div class="card mb-4" id="cartao3">
+                
+                <!-- Card image -->
+                
+                <img class="card-img-top" id="cardRec" src="meta.png" alt="Card image cap">
+                <div class="mask rgba-white-slight"></div>
+            
+            
+            <button type="button" class="btn" id="botao3" data-toggle="modal" data-target="#myModal3">Adicionar meta</button>   
+                
+            </div>   
+            
+        </div>
+        
+        
+    </section>
+            
+        <footer class="page-footer font-small blue pt-4 mt-4" style="color: white;" id="rodape">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row" style="background-color: #8A2BE2;">
+                <div style="margin-left: 2%">
+                    <h5 class="text-uppercase">Sobre</h5>
+                    <h6>O Controlando é uma plataforma de controle de</h6>
+                    <h6>finanças para sua empresa ou startup.</h6>
+                    
+                </div>
+                
+                <div style="margin-left:20%; margin-top: 1% ">
+                    <img src="bank%20(1).png">
+                </div>
+                
+                <div style="margin-left: 25%">
+                   
+                    <h6 class="text-uppercase" >Confira nossas redes sociais</h6>
+                    <ul class="list-unstyled">
+                        <li ><a href="https://www.instagram.com/?hl=pt-br"><img src="instagram.png"> <b>Instagram.com/Controlando</b> </a> </li>
+                        <li><a href="https://pt-br.facebook.com/"><img src="facebook.png"><b> Facebook.cm/Controlando </b> </a> </li>
+                        <li><a href="https://twitter.com/?lang=pt-br"><img src="twitter.png"> <b> Twitter.com/Controlando </b> </a> </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="footer-copyright py-3 text-center" style="background-color:#4B0082 ">
+            © 2018 Copyright: Controlando
+        </div>    
+    </footer>
+    
+    
+    
+    <script> src="/jquery/dist/jquery.min.js"</script>
+    <script> src="/popper.js/dist/umd/popper.min.js"</script>
+    <script> src="/bootstrap/dist/js/bootstrap.min.js"</script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+            
+    </body>
+    
+</html>

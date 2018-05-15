@@ -10,14 +10,14 @@
       
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
   
-    <title>Controlando</title>
+    <title>Controlando - Cadastro</title>
          
   </head>
     
-<body style="background-image: url('fundo.jpg'); background-repeat:no-repeat; overflow-x: hidden ">
+<body style="background-repeat:no-repeat; overflow-x: hidden; background-color: #F0F8FF;">
     <header id=cabecalho>
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary scrolling-navbar">
-                <a class="navbar-brand" href="#"><h1>Controlando</h1></a>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #8A2BE2">
+                <a class="navbar-brand" href="telaInicial.html"><h3>Controlando</h3></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -25,16 +25,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="telaprincipal.html">Início <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#form" style="color: white;">Início</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre</a>
+                            <a class="nav-link" href="#rodape" style="color: white;">Sobre</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Produtos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contato</a>
+                            <a class="nav-link" href="#rodape" style="color: white;">Contato</a>
                         </li>
                     </ul>
                     
@@ -51,8 +48,8 @@
         
         <div class="corpo" style="padding-left: 35%; padding-right: 35%; height: 75%; ">
             
-            <form class="formulario">
-                <fieldset id="fieldsetEmpresa">
+            <form class="formulario" id="form">
+                <fieldset class="fieldset" id="fieldsetEmpresa">
                     
                     <legend> <b>Cadastro</b></legend>
                     <legend> Empresa</legend>
@@ -72,7 +69,7 @@
                 
                 <br>
                 
-                <fieldset id="fieldsetAdm">
+                <fieldset class="fieldset" id="fieldsetAdm">
                     <legend> <b>Administrador</b></legend>
 
                     <!-- Default input email -->
@@ -83,8 +80,8 @@
                     <input type="e" id="inputEmail" class="form-control">
 
                     <div class="text-center mt-4">
-                        <button class="btn btn-light-blue btn-md bg-primary" style="color: white;" id="btnConfirm" type="submit" >Confirmar</button>
-                        <button class="btn btn-light-blue btn-md bg-primary" style="color: white;" id="btnCancel" type="reset" >Cancelar</button>
+                        <button class="btn btn-light-blue btn-md" style="background-color: #8A2BE2; color: white" id="btnCancel" type="reset" ><a href="telaInicial.html" style="color:white">Cancelar</a></button>
+                        <button class="btn btn-light-blue btn-md" style="background-color: #8A2BE2; color: white " id="btnConfirm" type="submit" > <a href="formularioCadastro.html" style="color:white">Confirmar</a></button>
                     </div>
                 </fieldset>
             </form>
@@ -93,11 +90,37 @@
 
     </section>  
     
-    <div class="footer">
-        <footer style="color:white;">
-            <p>© 2018 Copyright: Controlando</p>
-        </footer>
-    </div>
+     <footer class="page-footer font-small blue pt-4 mt-4" style="color: white;" id="rodape">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row" style="background-color: #8A2BE2;">
+                <div style="margin-left: 2%">
+                    <h5 class="text-uppercase">Sobre</h5>
+                    <h6>O Controlando é uma plataforma de controle de</h6>
+                    <h6>finanças para sua empresa ou startup.</h6>
+                    
+                </div>
+                
+                <div style="margin-left:20%; margin-top: 1% ">
+                    <img src="bank%20(1).png">
+                </div>
+                
+                <div style="margin-left: 25%">
+                   
+                    <h6 class="text-uppercase" >Confira nossas redes sociais</h6>
+                    <ul class="list-unstyled">
+                        <li ><a href="https://www.instagram.com/?hl=pt-br"><img src="instagram.png"> <b>Instagram.com/Controlando</b> </a> </li>
+                        <li><a href="https://pt-br.facebook.com/"><img src="facebook.png"><b> Facebook.cm/Controlando </b> </a> </li>
+                        <li><a href="https://twitter.com/?lang=pt-br"><img src="twitter.png"> <b> Twitter.com/Controlando </b> </a> </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="footer-copyright py-3 text-center" style="background-color:#4B0082 ">
+            © 2018 Copyright: Controlando
+        </div>    
+    </footer>
     
     
     <script> src="/jquery/dist/jquery.min.js"</script>
