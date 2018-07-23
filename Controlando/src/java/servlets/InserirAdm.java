@@ -27,12 +27,13 @@ public class InserirAdm extends HttpServlet {
         strEmailEmp = request.getParameter("txtEmailEmp");
         strEmailAdm = request.getParameter("txtEmailAdm");
         strSenha = request.getParameter("txtSenha");
+        
 
         response.setContentType("text/html;charset=UTF-8");
         out = response.getWriter();
 
         try {
-             out.println("<!doctype html>");
+            out.println("<!doctype html>");
             out.println("<html>");
             out.println("<body style='background-color: #E6E6FA'>");
             
