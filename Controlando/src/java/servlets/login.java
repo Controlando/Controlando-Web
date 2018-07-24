@@ -81,9 +81,10 @@ public class login extends HttpServlet {
             */
             C_Contador Cont = new C_Contador("", password, emailIndividual, 0, 0, 0, 1);
             if (conexao.abrirConexao()) {
+                String nomeEmpresa, nomeFuncionario;
                 
-                int id;
-                boolean contadorBool = false, administradorBool = false;
+                int id, administradorBool;
+                boolean contadorBool = false;
                 
                 cont.configurarConexao(conexao.obterConexao());
                 //encontrar contador ou admin
@@ -93,15 +94,18 @@ public class login extends HttpServlet {
                 administradorBool = cont.localizarAdmin(emailIndividual, password, emailEmpresa);
                 System.err.println("ADMIN: "+ administradorBool);
                 id = cont.localizarContadorId(emailIndividual, password);
-                
+                nomeEmpresa = cont.getNomeEmpresa(id);
+                nomeFuncionario = cont.localizarContadorNome(id);
+                        
                 //carrega o dado da sessao
                 session.setAttribute("password", password);
                 session.setAttribute("emailIndividual", emailIndividual);
                 session.setAttribute("administrador", administradorBool);     
                 session.setAttribute("emailEmpresa", emailEmpresa); 
                 session.setAttribute("idPessoa", id); 
-                 
-                if ((id > 0) || (administradorBool == true) ) {
+                session.setAttribute("nomeEmpresa", nomeEmpresa);
+                session.setAttribute("nomeFuncionario", nomeFuncionario);
+                if ((id > 0) || (administradorBool == 1) ) {
                     response.sendRedirect("telaPrincipal.jsp");
                 } else {
                     System.err.println("ASASA  "+emailIndividual+ "  "+password);

@@ -52,7 +52,23 @@ public class Contador {
         }
         return intCodigoContador;
     }
+public String localizarContadorNome(int codigo) {
+        String nome = null;                                                              /// Peguei doo exemplo do emmerson   
+        String strComandoSQL;
 
+        try {
+            strComandoSQL = "SELECT nome FROM contador WHERE codigo=" + codigo + ""; //// AJEITAR
+            psComando = conBanco.prepareStatement(strComandoSQL);
+            rsRegistros = psComando.executeQuery();
+            rsRegistros.next();
+            nome = rsRegistros.getString("nome");
+            System.err.println("noneeee "+nome);
+            return nome;
+        } catch (Exception erro) {
+            erro.printStackTrace();
+        }
+        return nome;
+    }
     public boolean localizarContador(String email, String senha) {
         int intCodigoContador = 0;                                                              /// Peguei doo exemplo do emmerson   
         String strComandoSQL;
@@ -77,7 +93,7 @@ public class Contador {
         }
 
     }
-    public boolean localizarAdmin(String email, String senha, String emailEmp) {
+    public int localizarAdmin(String email, String senha, String emailEmp) {
         int intCodigoContador = 0;                                                              /// Peguei doo exemplo do emmerson   
         String strComandoSQL;
 
@@ -90,17 +106,39 @@ public class Contador {
             intCodigoContador = rsRegistros.getInt("adm");
             System.out.println("contador: " + intCodigoContador);
             if (intCodigoContador > 0) {
-                return true;
+                return 1;
             } else {
-                return false;
+                return 0;
             }
         } catch (Exception erro) {
             erro.printStackTrace();
-            return false;
+            //return null;
         }
-
+        return 0;
     }
+public String getNomeEmpresa (int codigo) {
+        String nome = null;                                                              /// Peguei doo exemplo do emmerson   
+        String strComandoSQL;
 
+        try {
+            strComandoSQL = "SELECT E.nome from empresa E INNER JOIN contador C ON (E.codigo = C.codigoEmpresa) WHERE C.codigo = " + codigo; //// AJEITAR
+            psComando = conBanco.prepareStatement(strComandoSQL);
+            rsRegistros= psComando.executeQuery();
+            System.out.println("contador: " + codigo);
+            
+            rsRegistros.next();
+            nome = rsRegistros.getString("E.nome");
+            System.out.println("contador: " + nome);
+            if (nome != null) {
+                return nome;
+            } else {
+                return nome;
+            }
+        } catch (Exception erro) {
+            erro.printStackTrace();
+            return nome;
+        }
+    }
     public ResultSet lerContadorGeral() {
         String strComandoSQL;
 

@@ -23,10 +23,10 @@
     
     <%
         String senha = (String) session.getAttribute("password");
-        String emailIndividual = (String) session.getAttribute("emailIndividual");
-        String emailEmp = (String) session.getAttribute("emailEmpresa");
-        int id = (int) session.getAttribute("idPessoa");
-        out.println((boolean)session.getAttribute("administrador"));
+        String emailIndividual = String.valueOf(session.getAttribute("emailIndividual"));
+        String emailEmp = String.valueOf(session.getAttribute("emailEmpresa"));
+        Integer id = Integer.getInteger(String.valueOf(session.getAttribute("idPessoa")));
+        //out.println((boolean)session.getAttribute("administrador"));
         if (senha == null) {
             response.sendRedirect("telaInicial.html");
         } 
@@ -54,9 +54,9 @@
                             <button id = "historico" type="button" class="btn btn-primary" data-toggle="modal" style="background-color: #8A2BE2; border-color: #8A2BE2;"> <a href="historico.jsp" style="color: white">Histórico</a></button>
                         </li>
                         <%
-                            boolean admin = (boolean) session.getAttribute("administrador");
-        
-                            if (true) {
+                            Integer idAdmin = Integer.getInteger(String.valueOf(session.getAttribute("administrador")));
+
+                            if (idAdmin==1) {
                                 out.println("<li class='nav-item'>");
                                 out.println("<button id = 'contador' type='button' class='btn btn-primary' data-toggle='modal' style='background-color: #8A2BE2; border-color: #8A2BE2;'> <a href='contador.jsp' style='color: white'>Contador</a></button>");
                                 out.println("</li>");    
@@ -91,13 +91,12 @@
         <section id="coluna_esquerda"  >
         <br><br>
         <div class="card card-body" style="width: 100%; height: 80%; background:#4B088A;width: 120%; height: 80%;">
-            <p class="card-title" style="color:white; font-size:120%">Boa tarde, @NomeUsuário! </p>
+            <p class='card-title' style='color:white; font-size:120%'>Boa tarde, AJGS</p>    
+            
+                    
             <p class="card-text" style="text-align:center; color:white; font-size:200%; margin-top:10%">R$ 0,00 <br> Saldo Geral</p>
             
         </div>
-            
-        <br>
-            
         <div class="card card-body" style="width: 120%; height: 80%;">
             
             <h4 class="card-title" style="font-size: 130%; font-family:Calibri Light;"> 

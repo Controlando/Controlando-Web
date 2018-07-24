@@ -22,8 +22,7 @@ public class ConexaoBancoDados {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             //conBanco = DriverManager.getConnection(url, user, password);
-            conBanco = DriverManager.getConnection("jdbc:mysql://127.0.0.1/controlando?useSSL=false","root","root");
-            System.out.println("FUNCIONA CARALHO");
+            conBanco = DriverManager.getConnection("jdbc:mysql://127.0.0.1/controlando?useSSL=false&useTimezone=true&serverTimezone=UTC","root","root");
             return true;
         } catch (Exception erro) {
             erro.printStackTrace();
