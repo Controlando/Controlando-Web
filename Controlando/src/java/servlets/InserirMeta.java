@@ -50,7 +50,7 @@ public class InserirMeta extends HttpServlet {
                 
                 
                 if (meta.inserirMeta(Meta)) {
-                    response.sendRedirect("lancamentos.html");
+                    response.sendRedirect("lancamentos.jsp");
                 } else {
                     out.println("<fieldset style='border: 1px solid #000000; background-color: white; ' >");
                     out.println("<legend style='color: #8A2BE2'> <b>Aviso</b></legend>");

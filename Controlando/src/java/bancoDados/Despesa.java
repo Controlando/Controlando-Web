@@ -23,7 +23,7 @@ public class Despesa {
         String strComandoSQL;
 
         try {
-            strComandoSQL = "INSERT INTO despesa (nome,valor, nivel, periodo,data,codCont) VALUES('" +despesa.getNome()+ "','" +despesa.getValor()+ "','" + despesa.getNivel()+ "','" + despesa.getPeriodo()+ "','" + despesa.getData()+"','"+ despesa.getCodCont() +"')";
+            strComandoSQL = "INSERT INTO despesa (nome,valor, nivel, periodo,data,codCont) VALUES('" + despesa.getNome() + "','" + despesa.getValor() + "','" + despesa.getNivel() + "','" + despesa.getPeriodo() + "','" + despesa.getData() + "','" + despesa.getCodCont() + "')";
             psComando = conBanco.prepareStatement(strComandoSQL);
             psComando.executeUpdate();
 
@@ -33,8 +33,8 @@ public class Despesa {
             return false;
         }
     }
-    
-    public boolean alterarDespesa (String strData, int intCodigo) {
+
+    public boolean alterarDespesa(String strData, int intCodigo) {
         String strComandoSQL;
 
         try {
@@ -47,12 +47,12 @@ public class Despesa {
             return false;
         }
     }
-    
+
     public boolean excluirDespesa(int intCodigo) {
         String strComandoSQL;
 
         try {
-            strComandoSQL = "DELETE FROM despesa WHERE codigo = "+intCodigo;
+            strComandoSQL = "DELETE FROM despesa WHERE codigo = " + intCodigo;
             psComando = conBanco.prepareStatement(strComandoSQL);
             psComando.executeUpdate();
             return true;
@@ -61,24 +61,26 @@ public class Despesa {
             return false;
         }
     }
-    
-        
-    public ResultSet lerDespesas() {
+
+    public ResultSet lerDespesas(int codigo) {
         String strComandoSQL;
+
         try {
-           
-            strComandoSQL = "select * from despesa";
-                        
+
+            strComandoSQL = "SELECT D.codigo, D.nome, D.valor, D.nivel, D.periodo, D.data FROM despesa D"
+                    + " INNER JOIN contador C ON (D.codCont = C.codigo)"
+                    + " INNER JOIN empresa E ON (C.codigoEmpresa = E.codigo)"
+                    + " WHERE C.codigo = "+codigo;
+
             psComando = conBanco.prepareStatement(strComandoSQL);
             rsRegistros = psComando.executeQuery();
             rsRegistros.next();
-            
+
             return rsRegistros;
         } catch (Exception erro) {
             erro.printStackTrace();
             return null;
         }
     }
-    
+
 }
-   

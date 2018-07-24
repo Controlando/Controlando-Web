@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.C_Contador;
 
 /**
@@ -25,12 +26,20 @@ public class InserirContador extends HttpServlet {
 
         strNomeCont = request.getParameter("txtNomeCont");
         strEmailCont = request.getParameter("txtEmailCont");
-        strEmailAdm = request.getParameter("txtEmailAdm");
         strSenha = request.getParameter("txtSenhaCont");
+        
+        HttpSession session = request.getSession(); 
+        
+        String senha = (String) session.getAttribute("password");
+        String emailIndividual = (String) session.getAttribute("emailIndividual");
+        String emailEmp = (String) session.getAttribute("emailEmpresa");
+        int id = (int) session.getAttribute("idPessoa");
 
         response.setContentType("text/html;charset=UTF-8");
         out = response.getWriter();
-
+        
+        Contador c = new Contador();
+        int codigoEmp=c.getCodEmp(emailEmp);
         try {
             out.println("<!doctype html>");
             out.println("<html>");
@@ -38,12 +47,16 @@ public class InserirContador extends HttpServlet {
 
             ConexaoBancoDados conexao = new ConexaoBancoDados();
             Contador cont = new Contador();
-
-            C_Contador Cont = new C_Contador(0, strNomeCont, strSenha, strEmailCont, strEmailAdm);
+            
+       //String nome, String senha, String emailAdm, int codigoEmp, int adm, int codigoAdm, int status) - como ta no C_Contador
+            
+            C_Contador Cont = new C_Contador(strNomeCont, strSenha, emailIndividual,codigoEmp,0,id,1);
             if (conexao.abrirConexao()) {
                 cont.configurarConexao(conexao.obterConexao());
-                out.println(Cont.getEmail());
-
+                 System.out.println(strNomeCont);
+                 System.out.println(strSenha);
+                 System.out.println(emailIndividual);
+                 System.out.println(codigoEmp);
                 if (cont.inserirContador(Cont)) {
 
                     response.sendRedirect("contador.jsp");

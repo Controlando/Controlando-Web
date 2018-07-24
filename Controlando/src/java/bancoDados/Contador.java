@@ -36,7 +36,28 @@ public class Contador {
             return false;
         }
     }
+    public int getCodEmp(String emailEmp){
+        int cod;                                                     
+        String strComandoSQL;
 
+        try {
+            strComandoSQL = "SELECT codigo FROM empresa WHERE emailEmp='" + emailEmp+"'"; 
+            
+            psComando = conBanco.prepareStatement(strComandoSQL);
+            
+            rsRegistros = psComando.executeQuery();
+            rsRegistros.next();
+            
+            cod = rsRegistros.getInt("codigo");
+            
+            return cod;
+        } catch (Exception erro) {
+            erro.printStackTrace();
+            return 0;
+        }
+
+        
+    }
     public int localizarContador(String codigo) {
         int intCodigoContador = 0;                                                              /// Peguei doo exemplo do emmerson   
         String strComandoSQL;
@@ -101,11 +122,15 @@ public class Contador {
 
     }
 
-    public ResultSet lerContadorGeral() {
+    public ResultSet lerContadorGeral() { //AJEITAR
         String strComandoSQL;
 
         try {
-            strComandoSQL = "SELECT * FROM contador";
+            strComandoSQL = "SELECT C.codigo, C.nome, C.senha, C.email FROM contador C"
+                    + " INNER JOIN contador C ON (C.codCont = C.codigo)"
+                    + " INNER JOIN empresa E ON (C.codigoEmpresa = E.codigo)"
+                    + " WHERE C.codigo = "+codigo;
+
             psComando = conBanco.prepareStatement(strComandoSQL);
             rsRegistros = psComando.executeQuery();
             rsRegistros.next();

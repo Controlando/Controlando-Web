@@ -12,13 +12,22 @@ package model;
 public class C_Contador {
    private String nome, senha, emailAdm; 
    private int codigoEmp, adm, codigoAdm,status;
+   
+   public C_Contador(){
+       this.nome = "";
+        this.senha = "";
+        this.emailAdm = "";
+        this.codigoEmp = 0;
+        this.adm = 0;
+        this.codigoAdm = 0;
+        this.status = 0;
+   
+   }
 
     public C_Contador(String nome, String senha, String emailAdm, int codigoEmp, int adm, int codigoAdm, int status) {
         this.nome = nome;
         this.senha = senha;
-     
         this.emailAdm = emailAdm;
-        
         this.codigoEmp = codigoEmp;
         this.adm = adm;
         this.codigoAdm = codigoAdm;

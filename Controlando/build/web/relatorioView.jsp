@@ -37,7 +37,7 @@
             String senha = (String) session.getAttribute("password");
             String emailIndividual = (String) session.getAttribute("emailIndividual");
             String emailEmp = (String) session.getAttribute("emailEmpresa");
-            int id = (int) session.getAttribute("idPessoa");
+            
 
             if (senha == null) {
                 response.sendRedirect("telaInicial.html");
@@ -147,12 +147,13 @@
             <table class="table table-hover">
                 <%
                     ResultSet rsRegistros;
+                    int id = (int) session.getAttribute("idPessoa");
 
                     if (conexao.abrirConexao()) {
                         despesa.configurarConexao(conexao.obterConexao());
 
-                        rsRegistros = despesa.lerDespesas();
-
+                        rsRegistros = despesa.lerDespesas(id);
+                       
                         if (rsRegistros != null) {
                             out.println("<tr><th>Código</th><th>Nome</th><th>Valor</th><th>Nível</th><th>Período</th><th>Data</th></tr>");
 
@@ -178,7 +179,7 @@
                     }
 
                 %>
-
+ 
             </table>
         </div>
         <br>
@@ -190,12 +191,14 @@
         <div class="container">
             <h2>Receitas</h2>
             <table class="table table-hover">
-                <%                   ResultSet rsRegistros2;
+                <%                   
+                    ResultSet rsRegistros2;
+                     int id2 = (int) session.getAttribute("idPessoa");
 
                     if (conexao.abrirConexao()) {
                         receita.configurarConexao(conexao.obterConexao());
 
-                        rsRegistros2 = receita.lerReceitas();
+                        rsRegistros2 = receita.lerReceitas(id2);
 
                         if (rsRegistros2 != null) {
                             out.println("<tr><th>Código</th><th>Nome</th><th>Valor</th><th>Período</th><th>Data</th></tr>");
@@ -233,12 +236,14 @@
         <div class="container">
             <h2>Metas</h2>
             <table class="table table-hover">
-                <%                   ResultSet rsRegistros3;
-
+                <%                   
+                    ResultSet rsRegistros3;
+                    int id3 = (int) session.getAttribute("idPessoa");
+                     
                     if (conexao.abrirConexao()) {
                         meta.configurarConexao(conexao.obterConexao());
-
-                        rsRegistros3 = meta.lerMetas();
+                        
+                        rsRegistros3 = meta.lerMetas(id3);
 
                         if (rsRegistros3 != null) {
 

@@ -136,7 +136,7 @@
                                 <label for="defaultForm" class="grey-text" id="labelData">Data limite:</label>
                                 <input type="date" name="txtDataRec" class="form-control">
 
-                                
+
 
                                 <br>
                                 <label for="defaultForm" class="grey-text" id="labelPeriodo">Período:</label>
@@ -150,8 +150,8 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-default" style="background-color: #8A2BE2; color: white;">Salvar</button>
-                                <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Fechar</button>
+                                <button type="submit" class="btn btn-default" class="close" style="background-color: #8A2BE2; color: white;" onclick="msg2()">Salvar</button>
+                                <button type="button" class="btn btn-default"  data-dismiss="modal" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Limpar</button>
                             </div>
                         </form>
                     </div>
@@ -178,7 +178,7 @@
                                 <input type="text" name="txtValorDesp" class="form-control">
                                 <label for="defaultForm" class="grey-text" id="labelData">Data limite:</label>
                                 <input type="date" name="txtDataDesp" class="form-control">
-                                
+
                                 <br>
                                 <label for="defaultForm" class="grey-text" id="labelPeriodo">Período:</label>
                                 <select name="txtPeriodoDesp">
@@ -200,8 +200,8 @@
 
                             <div class="modal-footer">
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-default" style="background-color: #8A2BE2; color: white;" onclick="msg3()">Salvar</button>
-                                    <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Fechar</button>
+                                    <button type="submit" class="btn btn-default" class="close" style="background-color: #8A2BE2; color: white;" onclick="msg3()">Salvar</button>
+                                    <button type="button" class="btn btn-default"  data-dismiss="modal" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Limpar</button>
                                 </div> </div>
                         </form>
                     </div>
@@ -238,8 +238,8 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-default" style="background-color: #8A2BE2; color: white;" onclick="msg1()">Salvar</button>
-                                <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Fechar</button> </div>
+                                 <button type="submit" class="btn btn-default" class="close" style="background-color: #8A2BE2; color: white;" onclick="msg1()">Salvar</button>
+                                    <button type="button" class="btn btn-default"  data-dismiss="modal" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Limpar</button>
                         </form>
                     </div>
                 </div>

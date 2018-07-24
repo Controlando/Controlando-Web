@@ -63,11 +63,14 @@ public class Meta {
     }
     
         
-     public ResultSet lerMetas() {
+     public ResultSet lerMetas(int codigo) {
         String strComandoSQL;
         try {
            
-            strComandoSQL = "select * from meta";
+            strComandoSQL = "SELECT M.codigo, M.nome, M.data, M.valor, M.descricao, FROM meta M"
+                    + " INNER JOIN contador C ON (M.codCont = C.codigo)"
+                    + " INNER JOIN empresa E ON (C.codigoEmpresa = E.codigo)"
+                    + " WHERE C.codigo = "+codigo;
                         
             psComando = conBanco.prepareStatement(strComandoSQL);
             rsRegistros = psComando.executeQuery();

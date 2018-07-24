@@ -35,14 +35,17 @@ public class InserirDespesa extends HttpServlet {
         strNivelDesp = request.getParameter("txtNivelDesp");
         strPeriodoDesp = request.getParameter("txtPeriodoDesp");
         strDataDesp = request.getParameter("txtDataDesp");
-        
+        System.out.println("socroo0");
         
         HttpSession session = request.getSession(); 
         int id = (int) session.getAttribute("idPessoa");
 
         out = response.getWriter();
-
+System.out.println("socorro1");
         try {
+            System.out.println(id);
+            System.out.println("socorro2");
+            
             out.println("<!doctype html>");
             out.println("<html>");
             out.println("<body style='background-color: #E6E6FA'>");
@@ -56,7 +59,7 @@ public class InserirDespesa extends HttpServlet {
                 desp.configurarConexao(conexao.obterConexao());
 
                 if (desp.inserirDespesa(Desp)) {
-                    //response.sendRedirect("lancamentos.html");
+                    response.sendRedirect("lancamentos.jsp");
                 } else {
                    out.println("<fieldset style='border: 1px solid #000000; background-color: white; ' >");
                     out.println("<legend style='color: #8A2BE2'> <b>Aviso</b></legend>");

@@ -64,11 +64,14 @@ public class Receita {
     }
     
         
-    public ResultSet lerReceitas() {
+    public ResultSet lerReceitas(int codigo) {
         String strComandoSQL;
         try {
            
-            strComandoSQL = "select * from receita";
+           strComandoSQL = "SELECT R.codigo, R.nome, R.valor, R.periodo, R.periodo, R.data FROM receita R"
+                    + " INNER JOIN contador C ON (R.codCont = C.codigo)"
+                    + " INNER JOIN empresa E ON (C.codigoEmpresa = E.codigo)"
+                    + " WHERE C.codigo = "+codigo;
                         
             psComando = conBanco.prepareStatement(strComandoSQL);
             rsRegistros = psComando.executeQuery();
