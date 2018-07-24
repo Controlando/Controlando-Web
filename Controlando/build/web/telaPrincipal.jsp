@@ -25,11 +25,11 @@
         String senha = (String) session.getAttribute("password");
         String emailIndividual = (String) session.getAttribute("emailIndividual");
         String emailEmp = (String) session.getAttribute("emailEmpresa");
-        int id = (int) session.getAttribute("id");
-        
+        int id = (int) session.getAttribute("idPessoa");
+        out.println((boolean)session.getAttribute("administrador"));
         if (senha == null) {
             response.sendRedirect("telaInicial.html");
-        }
+        } 
     %>
 <!--Main Navigation-->
         <header id=cabecalho>
@@ -43,7 +43,7 @@
                     <ul class="navbar-nav mr-auto">
                         
                         <li class="nav-item">
-                            <button id = "botao" type="button" class="btn btn-primary" data-toggle="modal" style="background-color: #8A2BE2; border-color: #8A2BE2;"> <a href="lancamentos.html" style="color: white">Lançamentos</a></button>
+                            <button id = "botao" type="button" class="btn btn-primary" data-toggle="modal" style="background-color: #8A2BE2; border-color: #8A2BE2;"> <a href="lancamentos.jsp" style="color: white">Lançamentos</a></button>
                         </li>
 
                         <li class="nav-item">
@@ -53,10 +53,15 @@
                         <li class="nav-item">
                             <button id = "historico" type="button" class="btn btn-primary" data-toggle="modal" style="background-color: #8A2BE2; border-color: #8A2BE2;"> <a href="historico.jsp" style="color: white">Histórico</a></button>
                         </li>
-
-                        <li class="nav-item">
-                            <button id = "contador" type="button" class="btn btn-primary" data-toggle="modal" style="background-color: #8A2BE2; border-color: #8A2BE2;"> <a href="contador.jsp" style="color: white">Contador</a></button>
-                        </li>
+                        <%
+                            boolean admin = (boolean) session.getAttribute("administrador");
+        
+                            if (true) {
+                                out.println("<li class='nav-item'>");
+                                out.println("<button id = 'contador' type='button' class='btn btn-primary' data-toggle='modal' style='background-color: #8A2BE2; border-color: #8A2BE2;'> <a href='contador.jsp' style='color: white'>Contador</a></button>");
+                                out.println("</li>");    
+                            }
+                        %>
                     </ul>
                     <ul class="md-form left ml-auto">
                        <ul class="navbar-nav mr-auto">

@@ -16,16 +16,7 @@
     </head>
     
 <body style="background-color: aliceblue">  
-    <%
-        String senha = (String) session.getAttribute("password");
-        String emailIndividual = (String) session.getAttribute("emailIndividual");
-        String emailEmp = (String) session.getAttribute("emailEmpresa");
-        int id = (int) session.getAttribute("id");
-                 
-        if (senha == null) {
-            response.sendRedirect("telaInicial.html");
-        }
-    %>
+   
 <!--Main Navigation-->
     <script>
         

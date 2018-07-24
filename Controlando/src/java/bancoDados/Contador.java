@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -20,11 +21,11 @@ public class Contador {
         this.conBanco = conBanco;
     }
 
-    public boolean inserirContador(C_Contador contador) {
+    public boolean inserirContador(C_Contador cont) {
         String strComandoSQL;
 
         try {
-            strComandoSQL = "INSERT INTO contador(nome,senha,email,emailAdm) VALUES('" + contador.getNome() + "','" + contador.getSenha() + "','" + contador.getEmail() + "','" + contador.getEmailAdm() + "')";
+            strComandoSQL = "INSERT INTO contador(nome, senha, email ,adm, codigoEmpresa, status) VALUES('"+ cont.getNome()+"','"+cont.getSenha()+"','"+cont.getEmailAdm()+"'," +cont.getAdm()+","+ cont.getCodigoEmp()+","+cont.getStatus()+")";             
 
             psComando = conBanco.prepareStatement(strComandoSQL);
             psComando.executeUpdate();
@@ -64,6 +65,29 @@ public class Contador {
 
             rsRegistros.next();
             intCodigoContador = rsRegistros.getInt("codigo");
+            System.out.println("contador: " + intCodigoContador);
+            if (intCodigoContador > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception erro) {
+            erro.printStackTrace();
+            return false;
+        }
+
+    }
+    public boolean localizarAdmin(String email, String senha, String emailEmp) {
+        int intCodigoContador = 0;                                                              /// Peguei doo exemplo do emmerson   
+        String strComandoSQL;
+
+        try {
+            strComandoSQL = "SELECT adm FROM contador C INNER JOIN empresa Emp ON (C.codigoEmpresa = Emp.codigo) WHERE C.email='" + email + "' AND C.senha ='" + senha + "' AND Emp.emailEmp = '" + emailEmp + "'"; //// AJEITAR
+            psComando = conBanco.prepareStatement(strComandoSQL);
+            rsRegistros = psComando.executeQuery();
+
+            rsRegistros.next();
+            intCodigoContador = rsRegistros.getInt("adm");
             System.out.println("contador: " + intCodigoContador);
             if (intCodigoContador > 0) {
                 return true;
@@ -183,6 +207,24 @@ public class Contador {
             erro.printStackTrace();
             return intCodigoContador;
         }
+        
+    }
+    public int inserirEmpresa(String nome, String emailEmpresa) {
+        String strComandoSQL;
+        int idEmpresa = 0;
+        try {
+            strComandoSQL = "INSERT INTO empresa(nome, emailEmp) values('"+nome+"','" + emailEmpresa +"')";
+            psComando = conBanco.prepareStatement(strComandoSQL, Statement.RETURN_GENERATED_KEYS);
+            psComando.executeUpdate();
+            rsRegistros = psComando.getGeneratedKeys();
+            if(rsRegistros.next()){
+                idEmpresa=(int)rsRegistros.getInt(1);
+            }
+            return idEmpresa;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return idEmpresa;
         
     }
 }

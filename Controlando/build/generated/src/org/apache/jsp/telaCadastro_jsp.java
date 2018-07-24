@@ -59,6 +59,8 @@ public final class telaCadastro_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("    </head>\n");
       out.write("\n");
       out.write("    <body style=\"background-repeat:no-repeat; overflow-x: hidden; background-color: #F0F8FF;\">\n");
+      out.write("        \n");
+      out.write("\n");
       out.write("        <header id=cabecalho>\n");
       out.write("            <nav class=\"navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar\" style=\"background-color: #8A2BE2\">\n");
       out.write("                <a class=\"navbar-brand\" href=\"telaInicial.jsp\"><h3>Controlando</h3></a>\n");
@@ -115,7 +117,7 @@ public final class telaCadastro_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("                        <label class=\"grey-text\" id=\"labelEmail\">Nome:</label>\n");
       out.write("                        <input name=\"txtNomeAdm\" type=\"text\" class=\"form-control\" maxlength=\"50\">\n");
-      out.write("                           \n");
+      out.write("\n");
       out.write("                        <label for=\"defaultFormLoginEmailEx\" class=\"grey-text\" id=\"labelEmail\">Email:</label>\n");
       out.write("                        <input name=\"txtEmailAdm\" type=\"email\" id=\"inputEmail\" class=\"form-control\">\n");
       out.write("\n");
@@ -124,7 +126,7 @@ public final class telaCadastro_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("                        <div class=\"text-center mt-4\">\n");
       out.write("                            <button class=\"btn btn-light-blue btn-md\" style=\"background-color: #8A2BE2; color: white\" id=\"btnCancel\" type=\"reset\" ><a style=\"color:white\">Cancelar</a></button>\n");
-      out.write("                            <button class=\"btn btn-light-blue btn-md\" style=\"background-color: #8A2BE2; color: white \" id=\"btnConfirm\" type=\"submit\" > <a style=\"color:white\">Confirmar</a></button>\n");
+      out.write("                            <button class=\"btn btn-light-blue btn-md\" style=\"background-color: #8A2BE2; color: white \" id=\"btnConfirm\" type=\"submit\" onclick=\"msg()\" > <a style=\"color:white\">Confirmar</a></button>\n");
       out.write("                        </div>                                                                                              \n");
       out.write("                    </fieldset>\n");
       out.write("                </form>\n");
@@ -144,7 +146,7 @@ public final class telaCadastro_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                    </div>\n");
       out.write("\n");
       out.write("                    <div style=\"margin-left:20%; margin-top: 1% \">\n");
-      out.write("                        <img src=\"img/bank%20(1).png\">\n");
+      out.write("                        <img src=\"img/bank.png\">\n");
       out.write("                    </div>\n");
       out.write("\n");
       out.write("                    <div style=\"margin-left: 25%\">\n");

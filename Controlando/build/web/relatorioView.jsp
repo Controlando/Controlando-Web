@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 
 
@@ -37,7 +37,7 @@
             String senha = (String) session.getAttribute("password");
             String emailIndividual = (String) session.getAttribute("emailIndividual");
             String emailEmp = (String) session.getAttribute("emailEmpresa");
-            int id = (int) session.getAttribute("id");
+            int id = (int) session.getAttribute("idPessoa");
 
             if (senha == null) {
                 response.sendRedirect("telaInicial.html");
@@ -54,7 +54,7 @@
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item">
-                            <button id = "botao" type="button" class="btn btn-primary" data-toggle="modal" style="background-color: #8A2BE2; border-color: #8A2BE2;"> <a href="lancamentos.html" style="color: white">Lançamentos</a></button>
+                            <button id = "botao" type="button" class="btn btn-primary" data-toggle="modal" style="background-color: #8A2BE2; border-color: #8A2BE2;"> <a href="lancamentos.jsp" style="color: white">Lançamentos</a></button>
                         </li>
 
                         <li class="nav-item">

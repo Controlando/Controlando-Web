@@ -38,7 +38,7 @@ public class InserirDespesa extends HttpServlet {
         
         
         HttpSession session = request.getSession(); 
-        int id = (int) session.getAttribute("id");
+        int id = (int) session.getAttribute("idPessoa");
 
         out = response.getWriter();
 
@@ -79,41 +79,7 @@ public class InserirDespesa extends HttpServlet {
             out.println("<h2 style='color: #8A2BE2'>Erro do sistema: processo de cadastro de despesas!</h2>");
             out.println("</fieldset");
         }
-        try {
-            // data/hora atual
-            LocalDateTime agora = LocalDateTime.now();
-
-            // formatar a data
-            DateTimeFormatter formatterData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            String dataFormatada = formatterData.format(agora);
-
-            // formatar a hora
-            DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm:ss");
-            String horaFormatada = formatterHora.format(agora);
-
-            ConexaoBancoDados conexao = new ConexaoBancoDados();
-            Historico hist = new Historico();
-
-            C_Historico Hist = new C_Historico(horaFormatada, dataFormatada, "Usuario xxx inseriu a despesa:"+strNomeDesp+"de seguinte valor R$"+strValorDesp,6);
-
-            if (conexao.abrirConexao()) {
-                hist.configurarConexao(conexao.obterConexao());
-
-                if (hist.inserirHistorico(Hist)) {
-                    response.sendRedirect("lancamentos.html");
-                } else {
-                    out.println("<h2>Não foi possível cadastrar o usuário!</h2>");
-                }
-
-                conexao.fecharConexao();
-            } else {
-                out.println("<h2>Não foi possível estabelecer conexão com o banco de dados!</h2>");
-            }
-
-        } catch (Exception erro) {
-            erro.printStackTrace();
-            out.println("<h2>Erro do sistema: processo de cadastro de metas!</h2>");
-        }
+        
         out.println("<p class='RodapePagina'> Copyright(c) 2018 - Controlando </p>");
         out.println("</body>");
         out.println("</html>");

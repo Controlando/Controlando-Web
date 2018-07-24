@@ -10,36 +10,53 @@ package model;
  * @author ACER
  */
 public class C_Contador {
-   private String nome, senha, email, emailAdm; 
-   private int codigo;
-   
-   public C_Contador(){
-       this.nome="";
-       this.senha="";
-       this.email="";
-       this.emailAdm="";
-       this.codigo=0;  
-   }
-   
-    public C_Contador(int codigo, String nome, String senha, String email, String emailAdm) {
-        this.codigo = codigo;
+   private String nome, senha, emailAdm; 
+   private int codigoEmp, adm, codigoAdm,status;
+
+    public C_Contador(String nome, String senha, String emailAdm, int codigoEmp, int adm, int codigoAdm, int status) {
         this.nome = nome;
         this.senha = senha;
-        this.email = email;
+     
         this.emailAdm = emailAdm;
+        
+        this.codigoEmp = codigoEmp;
+        this.adm = adm;
+        this.codigoAdm = codigoAdm;
+        this.status = status;
     }
 
-    public C_Contador(int codigo) {
-        this.codigo = codigo;
+    public int getCodigoEmp() {
+        return codigoEmp;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public void setCodigoEmp(int codigoEmp) {
+        this.codigoEmp = codigoEmp;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    public int getAdm() {
+        return adm;
     }
+
+    public void setAdm(int adm) {
+        this.adm = adm;
+    }
+
+    public int getCodigoAdm() {
+        return codigoAdm;
+    }
+
+    public void setCodigoAdm(int codigoAdm) {
+        this.codigoAdm = codigoAdm;
+    }
+
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+ 
 
     public String getNome() {
         return nome;
@@ -56,15 +73,6 @@ public class C_Contador {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getEmailAdm() {
         return emailAdm;
     }

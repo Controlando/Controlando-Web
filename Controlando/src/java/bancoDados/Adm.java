@@ -4,6 +4,7 @@ import model.C_Adm;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 /**
  *
@@ -23,8 +24,8 @@ public class Adm {
         String strComandoSQL;
 
         try {
-            strComandoSQL = "INSERT INTO administrador(email,senha, emailEmp, nomeEmp) VALUES('"+ adm.getEmail()+"','"+adm.getSenha()+"','"+adm.getEmailEmp()+"','"+ adm.getNomeEmp()+"')";
-             
+            
+            strComandoSQL = "INSERT INTO contador(nome, senha, email ,adm, codigoEmpresa, status) VALUES('"+ adm.getNome()+"','"+adm.getSenha()+"','"+adm.getEmail()+"'," +1+",'"+ adm.getNomeEmp()+"')";             
             psComando = conBanco.prepareStatement(strComandoSQL);
             psComando.executeUpdate();
 
@@ -55,7 +56,7 @@ public class Adm {
         String strComandoSQL;
         int tam = 0;
         try {
-            strComandoSQL = "SELECT codigo FROM administrador WHERE  email = " + email +"' AND senha = '"+ senha +"' AND emailEmp = '"+ emailEmpresa +"'" ;
+            strComandoSQL = "SELECT codigo FROM  WHERE  email = " + email +"' AND senha = '"+ senha +"' AND emailEmp = '"+ emailEmpresa +"'" ;
             psComando = conBanco.prepareStatement(strComandoSQL);
             rsRegistros = psComando.executeQuery();
             rsRegistros.next();
@@ -71,7 +72,25 @@ public class Adm {
             return false;
         }
     }
-
+     
+    public int inserirEmpresa(String nome, String emailEmpresa) {
+        String strComandoSQL;
+        int idEmpresa = 0;
+        try {
+            strComandoSQL = "INSERT INTO empresa(nome, emailEmp) values('"+nome+"','" + emailEmpresa +"')";
+            psComando = conBanco.prepareStatement(strComandoSQL, Statement.RETURN_GENERATED_KEYS);
+            psComando.executeUpdate();
+            rsRegistros = psComando.getGeneratedKeys();
+            if(rsRegistros.next()){
+                idEmpresa=(int)rsRegistros.getInt(1);
+            }
+            return idEmpresa;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return idEmpresa;
+        
+    }
     /*public boolean alterarRegistro(C_Usuarios usuario) {
         String strComandoSQL;
 

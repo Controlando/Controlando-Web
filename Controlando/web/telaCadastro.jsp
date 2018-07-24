@@ -16,16 +16,7 @@
     </head>
 
     <body style="background-repeat:no-repeat; overflow-x: hidden; background-color: #F0F8FF;">
-        <%
-            String senha = (String) session.getAttribute("password");
-            String emailIndividual = (String) session.getAttribute("emailIndividual");
-            String emailEmp = (String) session.getAttribute("emailEmpresa");
-            int id = (int) session.getAttribute("id");
-
-            if (senha == null) {
-                response.sendRedirect("telaInicial.html");
-            }
-        %>
+        
 
         <header id=cabecalho>
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #8A2BE2">

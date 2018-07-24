@@ -76,8 +76,10 @@ public class login extends HttpServlet {
             ConexaoBancoDados conexao = new ConexaoBancoDados();
             Contador cont = new Contador();
             Adm administrador = new Adm();
-            C_Adm C_administrador = new C_Adm(emailIndividual, password, emailEmpresa, "");
+            /*C_Adm C_administrador = new C_Adm(emailIndividual, password, emailEmpresa, 
             C_Contador Adm = new C_Contador(0, "", "", emailIndividual, "");
+            */
+            C_Contador Cont = new C_Contador("", password, emailIndividual, 0, 0, 0, 1);
             if (conexao.abrirConexao()) {
                 
                 int id;
@@ -85,18 +87,21 @@ public class login extends HttpServlet {
                 
                 cont.configurarConexao(conexao.obterConexao());
                 //encontrar contador ou admin
-                contadorBool = cont.localizarContador(emailIndividual, password);
+                /*contadorBool = cont.localizarContador(emailIndividual, password);
                 administradorBool = administrador.lerRegistro(emailIndividual, password, emailEmpresa);
+                */
+                administradorBool = cont.localizarAdmin(emailIndividual, password, emailEmpresa);
+                System.err.println("ADMIN: "+ administradorBool);
                 id = cont.localizarContadorId(emailIndividual, password);
+                
                 //carrega o dado da sessao
                 session.setAttribute("password", password);
                 session.setAttribute("emailIndividual", emailIndividual);
                 session.setAttribute("administrador", administradorBool);     
-                 session.setAttribute("emailEmpresa", emailEmpresa); 
-                 session.setAttribute("id", id); 
+                session.setAttribute("emailEmpresa", emailEmpresa); 
+                session.setAttribute("idPessoa", id); 
                  
-                
-                if ((contadorBool == true) || (administradorBool == true) ) {
+                if ((id > 0) || (administradorBool == true) ) {
                     response.sendRedirect("telaPrincipal.jsp");
                 } else {
                     System.err.println("ASASA  "+emailIndividual+ "  "+password);
