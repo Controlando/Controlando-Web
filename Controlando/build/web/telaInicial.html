@@ -16,7 +16,16 @@
     </head>
     
 <body style="background-color: aliceblue">  
-   
+    <%
+        String senha = (String) session.getAttribute("password");
+        String emailIndividual = (String) session.getAttribute("emailIndividual");
+        String emailEmp = (String) session.getAttribute("emailEmpresa");
+        int id = (int) session.getAttribute("id");
+                 
+        if (senha == null) {
+            response.sendRedirect("telaInicial.html");
+        }
+    %>
 <!--Main Navigation-->
     <script>
         
@@ -80,7 +89,7 @@
                     <li class="nav-item">
                         <!--LoginModal-->
                         <button id = "botao" type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalLogin" style="background-color: #8A2BE2; border-color: #8A2BE2;"> <a href="#" style="color: white">Entrar <img src="img/login-icon.png"></a></button>
-                   
+                    
 
                     </li>
                     <li class="nav-item">

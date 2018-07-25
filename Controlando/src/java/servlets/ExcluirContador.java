@@ -18,15 +18,17 @@ public class ExcluirContador extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        int strCod;
         PrintWriter out;
         response.setContentType("text/html;charset=UTF-8");
         out = response.getWriter();
-
+        strCod = Integer.parseInt(request.getParameter("txtCodCont"));
  
         try {
             out.println("<!doctype html>");
             out.println("<html>");
             out.println("<body style='background-color: #E6E6FA'>");
+            
             
             ConexaoBancoDados conexao = new ConexaoBancoDados();
             Contador cont = new Contador();
@@ -34,7 +36,7 @@ public class ExcluirContador extends HttpServlet {
             if (conexao.abrirConexao()) {
                 cont.configurarConexao(conexao.obterConexao());
 
-                if (cont.excluirContador(Integer.parseInt(request.getParameter("txtCodCont")))) {
+                if (cont.excluirContador(strCod)) {
                     response.sendRedirect("contador.jsp");
                 } else {
                    out.println("<fieldset style='border: 1px solid #000000; background-color: white; ' >");

@@ -122,14 +122,14 @@ public class Contador {
 
     }
 
-    public ResultSet lerContadorGeral() { //AJEITAR
+    public ResultSet lerContadorGeral(int codigo) { //AJEITAR
         String strComandoSQL;
 
         try {
             strComandoSQL = "SELECT C.codigo, C.nome, C.senha, C.email FROM contador C"
                     + " INNER JOIN contador C ON (C.codCont = C.codigo)"
                     + " INNER JOIN empresa E ON (C.codigoEmpresa = E.codigo)"
-                    + " WHERE C.codigo = "+codigo;
+                    + " WHERE C.codigoEmpresa = "+codigo;
 
             psComando = conBanco.prepareStatement(strComandoSQL);
             rsRegistros = psComando.executeQuery();
@@ -151,7 +151,7 @@ public class Contador {
             rsRegistros = psComando.executeQuery();
             while (rsRegistros.next()) {
                 cont.setNome(rsRegistros.getString("nome"));
-                cont.setEmail(rsRegistros.getString("email"));
+                cont.setEmailAdm(rsRegistros.getString("email"));
                 cont.setSenha(rsRegistros.getString("senha"));
                 
             }
@@ -185,8 +185,8 @@ public class Contador {
         try {
             strComandoSQL = "UPDATE contador SET nome ='" + cont.getNome() + "','"
                     + "senha = '" + cont.getSenha() + "','"
-                    + "email = '" + cont.getEmail() + "','"
-                    + "WHERE codigo = " + cont.getCodigo();
+                    + "email = '" + cont.getEmailAdm()+ "','"
+                    + "WHERE codigo = " + cont.getCodigoAdm();
             psComando = conBanco.prepareStatement(strComandoSQL);
             psComando.executeUpdate();
 

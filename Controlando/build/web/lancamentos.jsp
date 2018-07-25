@@ -40,7 +40,7 @@
             String senha = (String) session.getAttribute("password");
             String emailIndividual = (String) session.getAttribute("emailIndividual");
             String emailEmp = (String) session.getAttribute("emailEmpresa");
-            int id = (int) session.getAttribute("idPessoa");
+            int id = (int) session.getAttribute("id");
 
             if (senha == null) {
                 response.sendRedirect("telaInicial.html");
@@ -64,7 +64,7 @@
         <header >
 
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: #8A2BE2">
-                <a class="navbar-brand" href="telaPrincipal.html"><h3>Controlando</h3></a>
+                <a class="navbar-brand" href="telaPrincipal.jsp"><h3>Controlando</h3></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -96,7 +96,7 @@
                                         <button type="button" class="dropbtn btn btn-primary btn-default btn-md my-sm-0 mr-5 ml-5 mt-3 dropdown-toggle" style="background-color:#311b92; color: white;" data-toggle="dropdown" ><img src="img/user.png" class="rounded-circle"></button>
                                         <div class="dropdown-content">
 
-                                            <a class="dropdown-item" href="configura%C3%A7ao.html"><img src="img/settings.png"> Configurações</a>
+                                            <a class="dropdown-item" href="configura%C3%A7ao.jsp"><img src="img/settings.png"> Configurações</a>
 
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="telaInicial.html"><img src="img/out2.png"> Sair</a>
@@ -137,7 +137,6 @@
                                 <input type="date" name="txtDataRec" class="form-control">
 
 
-
                                 <br>
                                 <label for="defaultForm" class="grey-text" id="labelPeriodo">Período:</label>
                                 <select name="txtPeriodoDesp">
@@ -150,8 +149,8 @@
                             </div>
 
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-default" class="close" style="background-color: #8A2BE2; color: white;" onclick="msg2()">Salvar</button>
-                                <button type="button" class="btn btn-default"  data-dismiss="modal" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Limpar</button>
+                                <button type="submit" class="btn btn-default" style="background-color: #8A2BE2; color: white;">Salvar</button>
+                                <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Fechar</button>
                             </div>
                         </form>
                     </div>
@@ -178,7 +177,7 @@
                                 <input type="text" name="txtValorDesp" class="form-control">
                                 <label for="defaultForm" class="grey-text" id="labelData">Data limite:</label>
                                 <input type="date" name="txtDataDesp" class="form-control">
-
+                               
                                 <br>
                                 <label for="defaultForm" class="grey-text" id="labelPeriodo">Período:</label>
                                 <select name="txtPeriodoDesp">
@@ -200,8 +199,8 @@
 
                             <div class="modal-footer">
                                 <div class="modal-footer">
-                                    <button type="submit" class="btn btn-default" class="close" style="background-color: #8A2BE2; color: white;" onclick="msg3()">Salvar</button>
-                                    <button type="button" class="btn btn-default"  data-dismiss="modal" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Limpar</button>
+                                    <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;" onclick="msg3()">Salvar</button>
+                                    <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Fechar</button>
                                 </div> </div>
                         </form>
                     </div>
@@ -235,11 +234,12 @@
                                 <label for="defaultForm" class="grey-text" id="labelDescricao">Descrição:</label>
                                 <input type="text" name="txtDescricaoMeta" class="form-control">
 
+                                
                             </div>
 
                             <div class="modal-footer">
-                                 <button type="submit" class="btn btn-default" class="close" style="background-color: #8A2BE2; color: white;" onclick="msg1()">Salvar</button>
-                                    <button type="button" class="btn btn-default"  data-dismiss="modal" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Limpar</button>
+                                <button type="submit" class="btn btn-default" style="background-color: #8A2BE2; color: white;" onclick="msg1()">Salvar</button>
+                                <button type="button" class="btn btn-default" style="background-color: #8A2BE2; color: white;" data-dismiss="modal">Fechar</button> </div>
                         </form>
                     </div>
                 </div>

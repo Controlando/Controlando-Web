@@ -37,9 +37,14 @@ public class InserirContador extends HttpServlet {
 
         response.setContentType("text/html;charset=UTF-8");
         out = response.getWriter();
-        
+        System.err.println("pao email empresa: "+emailEmp);
         Contador c = new Contador();
-        int codigoEmp=c.getCodEmp(emailEmp);
+        ConexaoBancoDados con = new ConexaoBancoDados();
+        boolean teste = con.abrirConexao();
+        c.configurarConexao(con.obterConexao());
+        int codigoEmp = c.getCodEmp(emailEmp);
+        System.err.println("pao numero: "+codigoEmp);
+        
         try {
             out.println("<!doctype html>");
             out.println("<html>");
@@ -50,7 +55,7 @@ public class InserirContador extends HttpServlet {
             
        //String nome, String senha, String emailAdm, int codigoEmp, int adm, int codigoAdm, int status) - como ta no C_Contador
             
-            C_Contador Cont = new C_Contador(strNomeCont, strSenha, emailIndividual,codigoEmp,0,id,1);
+            C_Contador Cont = new C_Contador(strNomeCont, strSenha, strEmailCont,codigoEmp,0,id,1);
             if (conexao.abrirConexao()) {
                 cont.configurarConexao(conexao.obterConexao());
                  System.out.println(strNomeCont);

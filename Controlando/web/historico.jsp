@@ -31,7 +31,7 @@
             String senha = (String) session.getAttribute("password");
             String emailIndividual = (String) session.getAttribute("emailIndividual");
             String emailEmp = (String) session.getAttribute("emailEmpresa");
-            int id = (int) session.getAttribute("idPessoa");
+            int id = (int) session.getAttribute("id");
 
             if (senha == null) {
                 response.sendRedirect("telaInicial.html");

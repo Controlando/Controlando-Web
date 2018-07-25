@@ -41,28 +41,12 @@
         <servlet-class>servlets.ExcluirContador</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>ExcluirDespesa</servlet-name>
-        <servlet-class>servlets.ExcluirDespesa</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ExcluirMeta</servlet-name>
-        <servlet-class>servlets.ExcluirMeta</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ExcluirReceita</servlet-name>
-        <servlet-class>servlets.ExcluirReceita</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>login</servlet-name>
         <servlet-class>servlets.login</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>InserirReceita</servlet-name>
         <servlet-class>servlets.InserirReceita</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>PesquisarCont</servlet-name>
-        <servlet-class>servlets.PesquisarCont</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>InserirAdm</servlet-name>
@@ -89,32 +73,8 @@
         <url-pattern>/AtualizarContador</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AtualizarDespesa</servlet-name>
-        <url-pattern>/AtualizarDespesa</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AtualizarMeta</servlet-name>
-        <url-pattern>/AtualizarMeta</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AtualizarReceita</servlet-name>
-        <url-pattern>/AtualizarReceita</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>ExcluirContador</servlet-name>
         <url-pattern>/ExcluirContador</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ExcluirDespesa</servlet-name>
-        <url-pattern>/ExcluirDespesa</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ExcluirMeta</servlet-name>
-        <url-pattern>/ExcluirMeta</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ExcluirReceita</servlet-name>
-        <url-pattern>/ExcluirReceita</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>login</servlet-name>
@@ -123,10 +83,6 @@
     <servlet-mapping>
         <servlet-name>InserirReceita</servlet-name>
         <url-pattern>/InserirReceita</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>PesquisarCont</servlet-name>
-        <url-pattern>/PesquisarCont</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

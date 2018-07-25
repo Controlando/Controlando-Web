@@ -18,7 +18,7 @@ public class Historico {
     public void configurarConexao(Connection conBanco) {
         this.conBanco = conBanco;
     }
-    
+    /*
     public boolean inserirHistorico(C_Historico historico) {
         String strComandoSQL;
 
@@ -34,7 +34,7 @@ public class Historico {
             return false;
         }
     }
-    
+    */
     public int localizarHistorico(String codigo) {
         int intCodigoContador = 0;                                                              /// Peguei doo exemplo do emmerson   
         String strComandoSQL;
@@ -66,7 +66,7 @@ public class Historico {
             return null;
         }
     }
-    
+    /*
     public boolean alterarContador(C_Historico historico) {
         String strComandoSQL;
 
@@ -100,5 +100,5 @@ public class Historico {
             erro.printStackTrace();
             return false;
         }
-    }
+    }*/
 }

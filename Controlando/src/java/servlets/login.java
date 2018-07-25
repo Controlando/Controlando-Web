@@ -60,10 +60,11 @@ public class login extends HttpServlet {
         PrintWriter out = null;
         HttpSession session = request.getSession(); 
         
+        
+        
         emailEmpresa = request.getParameter("txtEmailEmp");
         emailIndividual= request.getParameter("txtEmailInd");
         password = request.getParameter("txtSenha");
-        
         
         response.setContentType("text/html;charset=UTF-8");
         out = response.getWriter();
@@ -76,9 +77,6 @@ public class login extends HttpServlet {
             ConexaoBancoDados conexao = new ConexaoBancoDados();
             Contador cont = new Contador();
             Adm administrador = new Adm();
-            /*C_Adm C_administrador = new C_Adm(emailIndividual, password, emailEmpresa, 
-            C_Contador Adm = new C_Contador(0, "", "", emailIndividual, "");
-            */
             C_Contador Cont = new C_Contador("", password, emailIndividual, 0, 0, 0, 1);
             if (conexao.abrirConexao()) {
                 
@@ -87,21 +85,18 @@ public class login extends HttpServlet {
                 
                 cont.configurarConexao(conexao.obterConexao());
                 //encontrar contador ou admin
-                /*contadorBool = cont.localizarContador(emailIndividual, password);
+                contadorBool = cont.localizarContador(emailIndividual, password);
                 administradorBool = administrador.lerRegistro(emailIndividual, password, emailEmpresa);
-                */
-                administradorBool = cont.localizarAdmin(emailIndividual, password, emailEmpresa);
-                System.err.println("ADMIN: "+ administradorBool);
                 id = cont.localizarContadorId(emailIndividual, password);
-                
                 //carrega o dado da sessao
                 session.setAttribute("password", password);
                 session.setAttribute("emailIndividual", emailIndividual);
                 session.setAttribute("administrador", administradorBool);     
-                session.setAttribute("emailEmpresa", emailEmpresa); 
-                session.setAttribute("idPessoa", id); 
+                 session.setAttribute("emailEmpresa", emailEmpresa); 
+                 session.setAttribute("id", id); 
                  
-                if ((id > 0) || (administradorBool == true) ) {
+                
+                if ((contadorBool == true) || (administradorBool == true) ) {
                     response.sendRedirect("telaPrincipal.jsp");
                 } else {
                     System.err.println("ASASA  "+emailIndividual+ "  "+password);

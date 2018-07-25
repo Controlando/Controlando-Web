@@ -42,6 +42,27 @@ public class ConsultasAleatorias {
             return nome;
         }
     }
-    
+    public int getCodigoEmpresa (int codigo) {
+        int cod =0;                                                              /// Peguei doo exemplo do emmerson   
+        String strComandoSQL;
+
+        try {
+            strComandoSQL = "SELECT E.codigo from empresa E INNER JOIN contador C ON (E.codigo = C.codigoEmpresa) WHERE C.codigo = " + codigo; //// AJEITAR
+            psComando = conBanco.prepareStatement(strComandoSQL);
+            rsRegistros= psComando.executeQuery();
+            System.out.println("contador: " + codigo);
+            
+            rsRegistros.next();
+            cod = rsRegistros.getInt("E.codigo");
+            if (cod> 0) {
+                return cod;
+            } else {
+                return cod;
+            }
+        } catch (Exception erro) {
+            erro.printStackTrace();
+            return cod;
+        }
+    }
 
 }

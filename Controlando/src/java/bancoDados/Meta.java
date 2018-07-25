@@ -67,7 +67,7 @@ public class Meta {
         String strComandoSQL;
         try {
            
-            strComandoSQL = "SELECT M.codigo, M.nome, M.data, M.valor, M.descricao, FROM meta M"
+            strComandoSQL = "SELECT M.codigo, M.nome, M.data, M.valor, M.descricao, FROM meta M "
                     + " INNER JOIN contador C ON (M.codCont = C.codigo)"
                     + " INNER JOIN empresa E ON (C.codigoEmpresa = E.codigo)"
                     + " WHERE C.codigo = "+codigo;

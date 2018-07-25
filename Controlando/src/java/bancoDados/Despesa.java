@@ -82,5 +82,31 @@ public class Despesa {
             return null;
         }
     }
+    
+    public float totalDesp(int codEmp){
+        String strComandoSQL,strComandoSQL2;
+        float receita = 0, despesa= 0, total=0;
+        
+        try {
+            strComandoSQL = "SELECT sum(R.valor) AS valor FROM empresa E INNER JOIN contador C ON (C.codigoEmpresa = E.codigo) INNER JOIN receita R  ON (C.codigo = R.codCont) WHERE C.codigoEmpresa = 6";
+            strComandoSQL2 = "SELECT sum(D.valor) AS valor FROM empresa E INNER JOIN contador C ON (C.codigoEmpresa = E.codigo) INNER JOIN despesa D  ON (C.codigo = D.codCont) WHERE C.codigoEmpresa = 6;";
+          
+            psComando = conBanco.prepareStatement(strComandoSQL);
+            rsRegistros = psComando.executeQuery();
+            rsRegistros.next();
+            despesa = rsRegistros.getFloat("valor");
+            psComando = conBanco.prepareStatement(strComandoSQL);
+            rsRegistros = psComando.executeQuery();
+            rsRegistros.next();
+            receita = rsRegistros.getFloat("valor");
+            total = (float)receita - (float)despesa;
+            System.err.println("aa"+ total);
+            return total;
+        } catch (Exception erro) {
+            erro.printStackTrace();
+            return 0;
+        }
+    
+    }
 
 }

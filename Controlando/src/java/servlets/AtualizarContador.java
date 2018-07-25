@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.C_Contador;
 
 /**
@@ -20,9 +21,12 @@ public class AtualizarContador extends HttpServlet {
         
         String strNome, strEmail, strSenha;
         
-        int intCodigoCont;
+        HttpSession session = request.getSession();
+        int intCodigoCont, intCodigo;
+        
         PrintWriter out;
-
+        
+        intCodigo = Integer.parseInt((request.getParameter("txtCodCont")));
         strNome = request.getParameter("txtNomeCont");
         strEmail = request.getParameter("txtEmailCont");
         strSenha = request.getParameter("txtSenhaCont");
@@ -38,12 +42,13 @@ public class AtualizarContador extends HttpServlet {
             
             ConexaoBancoDados conexao = new ConexaoBancoDados();
             Contador cont = new Contador();
-
-            C_Contador Cont = new C_Contador(0,strNome,strSenha,strEmail,"");
+            //(String nome, String senha, String emailAdm, int codigoEmp, int adm, int codigoAdm, int status)
+                    
+            C_Contador Cont = new C_Contador(strNome,strSenha,strEmail,0,0,0,0);
 
             if (conexao.abrirConexao()) {
                 cont.configurarConexao(conexao.obterConexao());
-                if (cont.alterarContador(Cont)) {
+                if (cont.alterarContador(Cont, intCodigo)) {
                    response.sendRedirect("contador.jsp");
                 } else {
                     out.println("<fieldset style='border: 1px solid #000000; background-color: white; ' >");
@@ -74,4 +79,6 @@ public class AtualizarContador extends HttpServlet {
         out.println("</body>");
         out.println("</html>");
     }
+
+  
 }

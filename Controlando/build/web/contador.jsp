@@ -1,7 +1,7 @@
 <%@page import="java.sql.ResultSet"%>
 <jsp:useBean id="conexao" scope="page" class="bancoDados.ConexaoBancoDados"/>
 <jsp:useBean id="contador" scope="page" class="bancoDados.Contador"/>
-<%@page import="model.C_Contador"%>
+<jsp:useBean id="Contador" scope="page" class="model.C_Contador"/>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="pt-br">
@@ -30,14 +30,14 @@
     <body>
 
         <%
-        String senha = (String) session.getAttribute("password");
-        String emailIndividual = (String) session.getAttribute("emailIndividual");
-        String emailEmp = (String) session.getAttribute("emailEmpresa");
-        int id = (int) session.getAttribute("idPessoa");
-                 
-        if (senha == null) {
-            response.sendRedirect("telaInicial.html");
-        }
+            String senha = (String) session.getAttribute("password");
+            String emailIndividual = (String) session.getAttribute("emailIndividual");
+            String emailEmp = (String) session.getAttribute("emailEmpresa");
+            int id = (int) session.getAttribute("id");
+
+            if (senha == null) {
+                response.sendRedirect("telaInicial.html");
+            }
         %>
 
         <!--Main Navigation-->
@@ -111,7 +111,8 @@
                                 <p> Senha:</p>
                                 <input type="password" name="txtSenhaCont" class="form-control" style="margin-bottom: 3%">   
 
-                                 
+                                <br>
+                                <input type="text" name="txtEmailAdm" class="form-control" style="margin-bottom: 3%">  
 
                             </div>
 
@@ -136,26 +137,26 @@
                         </button>
                     </div>
                     <div class="modal-body" style="width: 400px;">
-                        <%C_Contador Cont = new C_Contador();%>
+
                         <div>
                             <p>Código:</p>
                             <input type="text"  name="txtCodCont"  class="form-control" style="margin-bottom: 3%">
                             <button type="submit"  class="btn btn-primary" name="btnPesquisar" data-target="#exampleModalCenter2">Pesquisar</button>
 
                             <% if (request.getParameter("btnPesquisar") != null) {
-                                    Cont = contador.getContadorByCodigo(request.getParameter("txtCodCont").toString());
+                                    Contador = contador.getContadorByCodigo(request.getParameter("txtCodCont").toString());
                                 }
                             %>
                             <form name="formInsereAdm" method="post" action="AtualizarContador" target="_parent">
 
                                 <p>Nome:</p>
-                                <input type="text" value="<%=Cont.getNome()%>" name="txtNomeCont"  class="form-control" style="margin-bottom: 3%">
+                                <input type="text" value="<%=Contador.getNome()%>" name="txtNomeCont"  class="form-control" style="margin-bottom: 3%">
 
                                 <p>Email:</p>
-                                <input type="email" value="<%=Cont.getEmailAdm()%>"name="txtEmailCont" class="form-control" style="margin-bottom: 3%">
+                                <input type="email" value="<%=Contador.getEmail()%>"name="txtEmailCont" class="form-control" style="margin-bottom: 3%">
 
                                 <p> Senha:</p>
-                                <input type="password" value="<%=Cont.getSenha()%>" name="txtSenhaCont" class="form-control" style="margin-bottom: 3%">   
+                                <input type="password" value="<%=Contador.getSenha()%>" name="txtSenhaCont" class="form-control" style="margin-bottom: 3%">   
 
                                 <br>
                                 <input type="text" name="txtEmailAdm" class="form-control" style="margin-bottom: 3%">  
